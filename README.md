@@ -4,7 +4,7 @@ Several Python projects containing Earth's Mover Distance image detector, PuLP o
 
 ### opProblem 1
 
-Part 1:
+# Part 1:
 Solve the following program:
 
        min 122x + 143y
@@ -16,7 +16,7 @@ subject to:
   2x +  3y ≥   3
   5x -  6y ≥-100
 Your program should find the optimal solution, determine its objective value, and identify the tight constraints.
-Part 2
+# Part 2:
 Find an optimal mixed strategy of the following game: Both players choose independently a single integer from 1 to 6. Then, the numbers are compared:
 
 If they are equal, there is a draw
@@ -26,7 +26,7 @@ Note that the game is symmetric and the same strategy is optimal for both player
 Required output example:
 
 x1: 0.2 x2: 0.1 x3: 0.2 x4: 0.1 x5: 0.2 x6: 0.2
-Part 3 
+# Part 3:
 On some imaginary island, there are 69 companies and there are bilateral contracts between them. The monarch of the island would like to inspect validity of each of these contracts during a single large event. The monarch requires two representatives to represent each contract relationship (they can be both from the same party of the contract or each from a different one). This is of course satisfied by each company sending a single representative, which would require involvement of 69 representatives in total. However, the companies want to find a solution which minimizes the total number of representatives who need to attend the event.
 
 Input file hw1-03.txt contains information about the contracts. Each line corresponds to a single contract and contains identifiers (1-69) of both involved parties separated by a space.
@@ -119,7 +119,6 @@ Your program should produce a picture in PNG format and record it to the file
 
 # opProblem 4
 
-Programming assignment 4
 We have a vehicle which needs to pass a known test track. You are given values Preq(t) for each time t=1,...,T which the vehicle's wheels needs to exert in order to successfully pass this test track.
 
 The vehicle has a combustion engine, a motor/generator connected to a battery, and a friction break. Motor/generator can act either as a motor when it uses energy stored in the battery to power the wheels, or as a generator when it extracts the power from the wheels (regenerative breaking) or the engine to store it in the battery.
@@ -139,15 +138,15 @@ The objective is to minimize the total fuel consumption of the vehicle over time
 Formulating the problem as a convex program
 It is almost convex, just one set of constraints is problematic. Hint: Try to relax it, only one inequality is important, but provide an explanation (e.g. in the comments of your code) why your formulation is equivalent.
 
-Task 1: Solve your convex program with cvxpy library
+# Task 1: Solve your convex program with cvxpy library
 Link to the library: https://www.cvxpy.org/. It is installed in vocareum. Implement it in function car_with_battery()
 
-Task 2: comparison with a battery-less car
+# Task 2: comparison with a battery-less car
 Change Ebatt_max to 0 and solve your program again to see how does it affect the power consumption. Implement your code in function car_without_battery()
 
 Hint: Maybe you can prepare a single function which takes the value Ebatt_max as a parameter and solves your convex program based on this parameter. You can then call it from both functions (with/without battery) with the desired parameter value.
 
-Task 3: handle glitches
+# Task 3: handle glitches
 You may find out that although your program is equivalent, the solution found by the solver does not fulfill all the relaxed constraints with equality. This might happen during long periods of breaking when there is a lot of opportunities to charge the battery and sometimes the solver may decide to waste part of the power available to charge the battery (because it may charge it fully in the following time steps). There are two options how to proceed:
 
 Postprocess the solution to get another solution with the same objective value where the relaxed constraints are preserved with equality. Such solution must exist since your program is equivalent to the original one. Hint: just move all the power from motor/generator to the battery and, if the battery is full, move it to the friction break.

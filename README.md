@@ -8,13 +8,13 @@ Several Python projects containing Earth's Mover Distance image detector, PuLP o
 Solve the following program:
 
        min 122x + 143y
-subject to:
+       subject to:
          x ≥ -10
          y ≤  10
-  3x +  2y ≤  10
- 12x + 14y ≥ -12.5
-  2x +  3y ≥   3
-  5x -  6y ≥-100
+         3x +  2y ≤  10
+         12x + 14y ≥ -12.5
+         2x +  3y ≥   3
+         5x -  6y ≥-100
 Your program should find the optimal solution, determine its objective value, and identify the tight constraints.
 # Part 2:
 Find an optimal mixed strategy of the following game: Both players choose independently a single integer from 1 to 6. Then, the numbers are compared:
